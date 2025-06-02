@@ -1,0 +1,216 @@
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Story</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom, #fff 0%, #a0d8ef 100%);
+      overflow-x: hidden;
+      position: relative;
+      min-height: 100vh;
+    }
+
+    h1 {
+      text-align: center;
+      color: #007c91;
+      margin: 2rem 0 1rem;
+    }
+
+    .bubble {
+      position: fixed;
+      bottom: -100px;
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      animation: float 10s infinite ease-in;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); opacity: 1; }
+      100% { transform: translateY(-120vh); opacity: 0; }
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 2rem;
+    }
+
+    .session {
+      display: none;
+      align-items: center;
+      gap: 2rem;
+      margin-bottom: 3rem;
+      animation: fadeIn 0.8s ease forwards;
+    }
+
+    .session:first-child {
+      display: flex;
+    }
+
+    .session:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
+    .session img {
+      width: 300px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .session-text {
+      flex: 1;
+    }
+
+    .session-text em {
+      color: #555;
+      font-style: italic;
+    }
+
+    .placeholder-img {
+      filter: blur(1.9px) grayscale(60%);
+      opacity: 0.7;
+      object-fit: cover;
+    }
+
+    .navigation {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .nav-button {
+      background-color: #00bcd4;
+      color: white;
+      border: none;
+      padding: 0.8rem 2rem;
+      margin: 0 0.5rem;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: background-color 0.3s;
+    }
+
+    .nav-button:hover {
+      background-color: #0097a7;
+    }
+
+    .home-navigation {
+      text-align: center;
+      margin-top: 1rem;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      .session {
+        flex-direction: column !important;
+        text-align: center;
+      }
+
+      .session img {
+        width: 80%;
+        margin: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>The Last Harmony: Whispers from Below</h1>
+
+  <div class="container">
+
+    <div class="session" id="session1">
+      <div class="session-text">
+        <h2>Bab 1: Gadis Yang Mendengar Laut</h2>
+        <p><em>Di sebuah pulau kecil di tepi samudra, hiduplah sebuah peradaban damai bernama Aqualume. Di tempat yang tenteram 
+          ini, seorang gadis bernama Lyra tumbuh. Ia lahir tepat saat badai besar melanda tujuh belas tahun yang lalu. Sejak itu, 
+          warga Aqualume percaya bahwa Lyra memiliki hubungan istimewa dengan lautan. Sejak kecil, Lyra mampu mendengar suara-suara 
+          yang tak bisa didengar orang lain seperti bisikan lembut dari karang, gumaman arus yang dalam, dan lagu-lagu misterius seolah 
+          berasal dari dasar laut. Ia menyimpan melodi-melodi itu dalam pikirannya, menggubahnya secara diam-diam, dan menyanyikannya hanya 
+          ketika sendiri. Setiap kali ia bernyanyi, ombak menari riang dan angin bersenandung bersamanya. Namun, Lyra sendiri tak pernah tahu 
+          dari mana datangnya kekuatan itu. Di peradaban tersebut beredar sebuah legenda bahwa lautan memiliki Tujuh Harmoni Kuno yang menjaga 
+          keseimbangan dunia. Setiap harmoni tersembunyi dalam bentuk nada suci, dijaga oleh makhluk-makhluk laut yang hanya bisa dibangkitkan 
+          oleh penyanyi sejati. Namun legenda itu hanyalah dongeng dan banyak yang tidak percaya.</em></p>
+      </div>
+      <img src="assets/gambar/bab1.png" alt="Prolog" class="placeholder-img" />
+    </div>
+
+    <div class="session" id="session2">
+      <div class="session-text">
+        <h2>Bab 2: Suara Yang Menanti Jawaban</h2>
+        <p><em>Menjelang ulang tahunnya yang ke-17, Lyra mulai mendengar nyanyian asing dalam desiran ombak. Suara-suara 
+          itu bukan ancaman, melainkan panggilan. Potongan-potongan lagu dari dunia lain terdengar patah-patah, seolah menanti 
+          untuk disempurnakan. Jiwa-jiwa laut tampaknya mencoba menyampaikan pesan yang hanya bisa dipahami Lyra. Di saat yang 
+          bersamaan, laut mulai gelisah. Pesisir tergerus, langit diliputi kabut asin, dan pusaran air muncul di tengah teluk, 
+          seolah sedang mencari sesuatu. Ternyata, Lyra adalah penyimpan Nada Ketujuh, satu-satunya nada yang belum pernah dinyanyikan 
+          selama ribuan tahun. Tanpa itu, keenam harmoni lain mulai pecah, dan lautan perlahan kehilangan keseimbangan.Dengan tekadnya, 
+          Lyra pun memulai perjalanan ke dalam laut untuk menemukan menemukan keenam harmoni dan menyatukannya dengan nada terakhir yang 
+          tersembunyi di dalam dirinya. Perjalanan tersebut membawanya ke tempat paling sakral di dasar laut, yaitu Ruangan Abisal, ruang 
+          purba yang terbentuk dari kristal laut dan dihuni gema nyanyian leluhur. </em></p>
+      </div>
+      <img src="assets/gambar/bab2.png" alt="Konflik" class="placeholder-img" />
+    </div>
+
+    <div class="session" id="session3">
+      <div class="session-text">
+        <h2>Bab 3: Sang Penjaga Harmoni</h2>
+        <p><em>Namun, bahaya mengintai. Dari kegelapan terdalam, bangkit makhluk mitologis bernama Silmora makhluk yang 
+          membenci suara dan berambisi membungkam seluruh dunia agar tak ada nyanyian tersisa. Dalam Pertempuran terakhir 
+          di Ruangan Abisal, Lyra mengangkat suaranya dan menyanyikan Harmoni Ketujuh. Simfoni suci itu bukan hanya menenangkan 
+          Silmora tetapi juga mengembalikan keseimbangan antara laut dan daratan. Ketika Lyra kembali ke permukaan, langit telah 
+          cerah dan laut kembali damai. Warga Aqualume menyambutnya bukan hanya sebagai penyelamat dunia, tetapi sebagai Penjaga 
+          Harmoni Laut—karena ia telah membuktikan bahwa kekuatan suara sejati lahir bukan dari nyanyian semata, tetapi dari keberanian 
+          untuk mendengarkan dan memahami suara dunia.</em></p>
+      </div>
+      <img src="assets/gambar/bab3 ref.png" alt="Epilog" class="placeholder-img" />
+    </div>
+
+    <!-- Navigation Buttons -->
+    <div class="navigation">
+      <button class="nav-button" onclick="navigate(-1)">&lt;</button>
+      <button class="nav-button" onclick="navigate(1)">&gt;</button>
+    </div>
+  </div>
+
+    <div class="home-navigation">
+      <button class="nav-button" onclick="goHome()">Home</button>
+    </div>
+
+  <script>
+    const sessions = document.querySelectorAll('.session');
+    let currentIndex = 0;
+
+    function navigate(direction) {
+      sessions[currentIndex].style.display = 'none';
+      currentIndex += direction;
+      if (currentIndex < 0) currentIndex = sessions.length - 1;
+      if (currentIndex >= sessions.length) currentIndex = 0;
+      sessions[currentIndex].style.display = 'flex';
+    }
+
+    function goHome() {
+      window.location.href = "index.html";
+    }
+
+    // Bubble Generator
+    for (let i = 0; i < 30; i++) {
+      const bubble = document.createElement('div');
+      const size = Math.random() * 20 + 10;
+      bubble.className = 'bubble';
+      bubble.style.left = Math.random() * 100 + 'vw';
+      bubble.style.width = size + 'px';
+      bubble.style.height = size + 'px';
+      bubble.style.animationDuration = Math.random() * 5 + 5 + 's';
+      document.body.appendChild(bubble);
+    
+    }
+  </script>
+</body>
+</html>

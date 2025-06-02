@@ -1,0 +1,249 @@
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title> #OceanGir17udgment </title>
+
+  <!-- Lottie Script -->
+  <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+
+  <style>
+    html, body {
+      scroll-behavior: auto;
+      overflow-x: hidden;
+      overscroll-behavior: none;
+      height: 100%;
+    }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url('assets/gambar/bg.png') no-repeat center center fixed;
+      background-size: cover;
+      color: #2c3e50;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    header {
+      text-align: center;
+      padding: 80px 20px 40px;
+      background: transparent;
+      position: relative;
+      z-index: 2;
+    }
+
+    header h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+      min-height: 70px;
+    }
+
+    header p {
+      font-size: 1.2em;
+      color: #ffffff;
+    }
+
+    .button-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    button {
+      background-color: #007c91; /* biru laut tua */
+      border: none;
+      padding: 12px 24px;
+      color: white;
+      font-size: 1.2em;
+      cursor: pointer;
+      border-radius: 12px;
+      margin: 5px;
+      transition: background-color 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* bayangan */
+    }
+
+    button:hover {
+      background-color: #005f6b; /* warna saat hover */
+    }
+
+    .bubble {
+      position: fixed;
+      bottom: -100px;
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      animation: float 10s infinite ease-in;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); opacity: 1; }
+      100% { transform: translateY(-120vh); opacity: 0; }
+    }
+
+    .jellyfish-lottie {
+      position: absolute;
+      bottom: -200px;
+      animation: jellyRise linear infinite;
+      opacity: 0.9;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    @keyframes jellyRise {
+      0% { transform: translateY(0); opacity: 0.9; }
+      50% { opacity: 1; }
+      100% { transform: translateY(-160vh); opacity: 0; }
+    }
+
+    .preview-section {
+      text-align: center;
+      padding: 40px 20px;
+      color: #004d40;
+      font-size: 1.1em;
+      background: rgba(255, 255, 255, 0.7);
+      border-radius: 14px;
+      max-width: 90%;
+      width: 600px;
+      margin: 20px auto;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .preview-section h2 {
+      font-size: 2em;
+      color: #004d40;
+    }
+
+    .preview-section blockquote {
+      font-style: italic;
+      margin: 20px auto;
+      max-width: 600px;
+      padding: 20px;
+      border-left: 4px solid #4dd0e1;
+      background-color: rgba(240, 248, 255, 0.5); /* biru muda transparan */
+      border-radius: 12px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+      color: #ffffff;
+      background: transparent;
+      z-index: 2;
+      position: relative;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2em;
+      }
+
+      button {
+        font-size: 1em;
+        padding: 10px 20px;
+      }
+
+      .preview-section h2 {
+        font-size: 1.5em;
+      }
+
+      .preview-section blockquote {
+        font-size: 0.95em;
+        padding: 10px 15px;
+        margin: 10px auto;
+        border-left: 3px solid #4dd0e1;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1 id="animatedTitle"></h1>
+    <p>Selamat datang Kamu</p>
+    <div class="button-container">
+      <button onclick="location.href='story.html'">Baca Cerita</button>
+    </div>
+  </header>
+
+  <!-- Cerita Preview -->
+  <section class="preview-section">
+    <h2>Notes</h2>
+    <blockquote>
+      "Haii "
+    </blockquote>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    #OceanGir17udgment - Dibuat dengan cinta 💙 oleh <b>🌊</b>
+  </footer>
+
+  <!-- Typewriter Effect -->
+  <script>
+    const text = "Welcome To The Ocean Adventure!";
+    const el = document.getElementById("animatedTitle");
+    let i = 0;
+    function typeEffect() {
+      if (i < text.length) {
+        el.innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeEffect, 100);
+      }
+    }
+    window.onload = typeEffect;
+  </script>
+
+  <!-- Bubble Generator -->
+  <script>
+    for (let i = 0; i < 30; i++) {
+      const bubble = document.createElement('div');
+      const size = Math.random() * 20 + 10;
+      bubble.className = 'bubble';
+      bubble.style.left = Math.random() * 100 + 'vw';
+      bubble.style.width = size + 'px';
+      bubble.style.height = size + 'px';
+      bubble.style.animationDuration = Math.random() * 5 + 5 + 's';
+      document.body.appendChild(bubble);
+    }
+  </script>
+
+  <!-- Jellyfish Generator -->
+  <script>
+    const screenWidth = window.innerWidth;
+    const isMobile = screenWidth < 600;
+
+    const jellyCount = isMobile ? 6 : 8; 
+    const minSize = isMobile ? 100 : 105;
+    const maxSize = isMobile ? 100 : 110;
+
+    for (let i = 0; i < jellyCount; i++) {
+      const jelly = document.createElement('dotlottie-player');
+      jelly.setAttribute('src', 'https://lottie.host/be51d22c-711e-4c7c-8b3f-cab937109fce/T9LSgqjo32.lottie');
+      jelly.setAttribute('background', 'transparent');
+      jelly.setAttribute('speed', '1');
+      jelly.setAttribute('loop', '');
+      jelly.setAttribute('autoplay', '');
+      jelly.className = 'jellyfish-lottie';
+
+      const slotWidth = screenWidth / jellyCount;
+      const leftOffset = Math.random() * slotWidth;
+      const size = Math.random() * (maxSize - minSize) + minSize;
+      let leftPosition = i * slotWidth + leftOffset - size / 2;
+
+      leftPosition = Math.max(0, Math.min(leftPosition, screenWidth - size));
+      jelly.style.left = `${leftPosition}px`;
+
+      jelly.style.width = `${size}px`;
+      jelly.style.height = `${size}px`;
+
+      jelly.style.animationDuration = `${Math.random() * 10 + 10}s`;
+      jelly.style.animationDelay = `${Math.random() * 8}s`;
+
+      document.body.appendChild(jelly);
+  }
+  </script>
+
+</body>
+</html>
