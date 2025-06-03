@@ -183,6 +183,9 @@
       <button class="nav-button" onclick="goHome()">Home</button>
     </div>
 
+    <!-- BGM-->
+    <audio id="bgmusic" src="assets/audio/bgm3.mp3" autoplay loop></audio>
+
   <script>
     const sessions = document.querySelectorAll('.session');
     let currentIndex = 0;
@@ -212,5 +215,24 @@
     
     }
   </script>
+
+  <!--BGM Editor-->
+  <script>
+    window.onload = () => {
+      const bgmusic = document.getElementById('bgmusic');
+      bgmusic.volume = 0.3;
+      bgmusic.pause(); 
+
+      function startMusic() {
+        bgmusic.play().catch(() => {
+          console.log("Gagal memutar musik");
+        });
+        document.body.removeEventListener('click', startMusic);
+      }
+
+      document.body.addEventListener('click', startMusic);
+    };
+  </script>
+
 </body>
 </html>
