@@ -119,6 +119,21 @@
         margin: auto;
       }
     }
+
+      #musicNotice {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: #007c91;
+        color: white;
+        text-align: center;
+        padding: 10px;
+        font-size: 1em;
+        z-index: 9999;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        transition: top 0.5s ease;
+      }
   </style>
 </head>
 <body>
@@ -186,6 +201,11 @@
     <!-- BGM-->
     <audio id="bgmusic" src="assets/audio/bgm3.mp3" autoplay loop></audio>
 
+    <!-- Info Musik -->
+    <div id="musicNotice">
+      Klik di mana saja untuk memulai musik 🎵
+    </div>
+
   <script>
     const sessions = document.querySelectorAll('.session');
     let currentIndex = 0;
@@ -220,14 +240,21 @@
   <script>
     window.onload = () => {
       const bgmusic = document.getElementById('bgmusic');
+      const notice = document.getElementById('musicNotice');
+
       bgmusic.volume = 0.3;
-      bgmusic.pause(); 
+      bgmusic.pause();
 
       function startMusic() {
         bgmusic.play().catch(() => {
           console.log("Gagal memutar musik");
         });
         document.body.removeEventListener('click', startMusic);
+
+        if (notice) {
+          notice.style.top = '-60px'; // animasi keluar ke atas
+          setTimeout(() => notice.style.display = 'none', 600);
+        }
       }
 
       document.body.addEventListener('click', startMusic);
